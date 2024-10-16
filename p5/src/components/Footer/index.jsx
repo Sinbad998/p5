@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import Logo from '../../assets/logoFooter.png'
+import Logo from '../../assets/D_Footer.png'
 
 
 
@@ -10,22 +9,20 @@ const FooterLogo = styled.img`
 `
 
 const FooterContainer = styled.nav`
-  
-
   width: 100%
 `
 
-function Header() {
+function Footer() {
   return (
-    <FooterContainer>
-      <div>
-
-      </div>
-      <Link to="/">
-        <FooterLogo src={Logo} />
-      </Link>
-    </FooterContainer>
+    <footer>
+        <FooterContainer>
+            <div className='footerDiv'>
+            <FooterLogo src={Logo} />
+            <p>© 2020 Kasa. All rights reserved</p>
+            </div>
+        </FooterContainer>
+    </footer>
   )
 }
 
-export default Header
+export default Footer

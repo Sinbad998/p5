@@ -10,23 +10,25 @@ const HomeLogo = styled.img`
 `
 
 const NavContainer = styled.nav`
-  padding: 30px;
-  display: flex;
+padding: 30px;
+display: flex;
   justify-content: space-between;
   align-items: center;
-`
+  `
 
-function Header() {
-  return (
-    <NavContainer>
-      <Link to="/">
-        <HomeLogo src={Logo} />
-      </Link>
-      <div>
-        <StyledLink to="/">Accueil</StyledLink>
-        <StyledLink to="/A-Propos">A propos</StyledLink>
-      </div>
-    </NavContainer>
+  function Header() {
+    return (  
+    <header>
+      <NavContainer>
+        <Link to="/">
+          <HomeLogo src={Logo} />
+        </Link>
+        <div>
+          <StyledLink to="/">Accueil</StyledLink>
+          <StyledLink to="/A-Propos">A propos</StyledLink>
+        </div>
+      </NavContainer>
+    </header>
   )
 }
 

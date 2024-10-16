@@ -1,15 +1,15 @@
-import picture from '../assets/_Section 1.png'
-import styled from 'styled-components'
+import picture from '../assets/assetsApropos.png'
+/*import styled from 'styled-components'*/
 
 
-const imgMontagnes = styled.img`
+/*const imgMontagnes = styled.img`
   height: 70px;
 `
-
+*/
 function APropos() {
     return (
       <div>
-      <imgMontagnes src={picture} alt="Montagnes" />
+      <img src={picture} alt="Montagnes" />
       </div>
     )
   }

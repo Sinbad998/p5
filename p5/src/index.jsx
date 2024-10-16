@@ -10,6 +10,8 @@ import Home from './pages/Home'
 import Fichelogements from './pages/Fichelogements'
 import Header from './components/Header';
 import Footer from './components/Footer'
+import "./assets/scss/index.scss"
+
 
 
 
@@ -23,7 +25,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
-        <Route path="/Fiche-logements" element={<Fichelogements />} />
+        <Route path="/Fiche-logements/:id" element={<Fichelogements />} />
         <Route path="/A-Propos" element={<APropos />} />
       </Routes>
       <Footer />
