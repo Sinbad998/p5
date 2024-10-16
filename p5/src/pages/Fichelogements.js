@@ -12,15 +12,14 @@ const  Fichelogements = () => {
   const pictures = Data.pictures;
     return (
       <div>
-        <h1>voici le livre avec l'id {id}</h1>
-        <p>voici le titre du livre:{Data.title}</p>
-        <p>voici la description : {Data.description}</p>
         {pictures.map((picture,index)=>{
           return (
             <img src ={picture} alt={picture.title} key={(picture,index)}/>
           )
         })
       }
+      <p>{Data.title}</p>
+      <p>{Data.description}</p>
       </div>
     )
   }
