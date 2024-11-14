@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Logo from '../../assets/Screen=Desktop, Active=Accueil.png'
 import { StyledLink } from '../../utils/style/Atoms'
-
+import { NavLink } from 'react-router-dom';
 
 
 const HomeLogo = styled.img`
@@ -17,6 +17,21 @@ display: flex;
   align-items: center;
   `
 
+  const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  margin-right: 20px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+
+  &.active {
+    border-bottom: 1px solid black;
+    justify-content: center
+    bottom: -5px
+  }
+`;
+
   function Header() {
     return (  
     <header>
@@ -25,8 +40,8 @@ display: flex;
           <HomeLogo src={Logo} />
         </Link>
         <div className='lienA'>
-          <StyledLink to="/">Accueil</StyledLink>
-          <StyledLink to="/A-Propos">A propos</StyledLink>
+          <StyledNavLink exact to="/" activeClassName="active">Accueil</StyledNavLink>
+          <StyledNavLink to="/A-Propos" activeClassName="active">A propos</StyledNavLink>
         </div>
       </NavContainer>
     </header>
