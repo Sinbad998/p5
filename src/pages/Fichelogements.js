@@ -73,24 +73,24 @@ const Fichelogements = () => {
           </div>
       </div>
       <div className="details">
-        <div className="description">
-        <button onClick={() => setDescription(!seeDescription)}>
-          Description
-          {!seeDescription && <span className="Top">&#94;</span>}
-        </button>
-          {seeDescription && <p>{Data.description}</p>}
-        </div>
-        <div className="equipments">
-        <button onClick={() => setEquipments(!seeEquipments)}>
-          Équipements
-          {!seeEquipments && <span className="Top">&#94;</span>}
-        </button>
-          {seeEquipments && (
-            <ul>
-              {Data.equipments.map((equipment, i) => (
-                <li key={i}>{equipment}</li>
-              ))}
-            </ul>
+  <div className="description">
+    <button onClick={() => setDescription(!seeDescription)}>
+      Description
+      <span className={`Top arrow ${seeDescription ? 'open' : ''}`}>&#94;</span>
+    </button>
+    {seeDescription && <p>{Data.description}</p>}
+  </div>
+  <div className="equipments">
+    <button onClick={() => setEquipments(!seeEquipments)}>
+      Équipements
+      <span className={`Top arrow ${seeEquipments ? 'open' : ''}`}>&#94;</span>
+    </button>
+    {seeEquipments && (
+      <ul>
+        {Data.equipments.map((equipment, i) => (
+          <li key={i}>{equipment}</li>
+        ))}
+      </ul>
           )}
         </div>
       </div>

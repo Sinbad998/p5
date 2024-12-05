@@ -7,7 +7,9 @@ const Home = ()=>{
     <main className="home">
       <div className="banner">
         <img src={picture} alt="Montagnes avec titre de page" />
-        <h1>Chez vous, partout et ailleurs</h1>
+        <h1>Chez vous,{''} 
+          <span className=""></span>
+          partout et ailleurs</h1>
       </div>
       <div className="gallery">
         <Card Datas={Datas}/>
