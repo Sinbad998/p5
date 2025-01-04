@@ -132,6 +132,12 @@ body:not(.footerDiv){
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  align-content: center;
+}
+
+.footerDiv img{
+  height: 50px;
+  width: 137px;
 }
 
 .footerDiv p{
@@ -139,6 +145,9 @@ body:not(.footerDiv){
   color: white;
   justify-content: center;
   display: flex;
+  margin-top: 30px;
+  margin-bottom: -75px;
+  font-size: 25px;
 }
 
 footer nav div img{
@@ -230,11 +239,19 @@ p.descrP {
   margin-bottom: 20px;
 }
 
+.lienA {
+  display: flex;
+  gap: 50px;
+}
+
 .lienA a{
   color: black;
   text-decoration: none;
   font-size: 25px;
   text-align: center;
+  margin-right: 0px;
+  line-height: 14px;
+  font-weight: 500;
 }
 
 span.Right {
@@ -247,7 +264,7 @@ span.Right {
 
 span.Left {
   position: absolute;
-  margin-left: 5px;
+  margin-left: -12px;
   cursor: pointer;
   font-size: 100px;
   color: white;
@@ -300,6 +317,12 @@ span.Left {
   justify-content: space-between;
 }
 
+.logement-title{
+  height: 55px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
 .logement-info {
   display: flex;
   flex-wrap: wrap;
@@ -307,6 +330,7 @@ span.Left {
   width: 40%;
   gap: 20px;
   padding-left: 0px;
+  padding-bottom: 0px
 }
 
 .logement-title h2 {
@@ -331,6 +355,9 @@ span.Left {
 .tags {
   display: flex;
   gap: 10px;
+  height: 0px;
+  margin-bottom: 45px;
+  margin-top: 36px;
 }
 
 .tag {
@@ -338,12 +365,13 @@ span.Left {
   color: white;
   padding: 5px 10px;
   border-radius: 30px;
-  width: 130px;
+  width: 143px;
   height: 25px;
   justify-content: center;
   display: flex;
   font-weight: 600;
   font-size: 14px;
+  align-items:center ;
 }
 
 .host {
@@ -358,8 +386,8 @@ span.Left {
   align-items: center;
   width: 11%;
   flex-wrap: wrap;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 36px;
+  margin-bottom: 36px;
 }
 
 .host p {
@@ -401,7 +429,7 @@ span.Left {
   width: 50%;
 }
 
-.description p {
+.collapse-content.open {
   width: 100%;
   background-color: #F6F6F6;
   padding: 20px;
@@ -409,16 +437,27 @@ span.Left {
   font-size: 20px;
 }
 
-.equipments {
-  width: 50%;
+
+.arrow {
+  display: inline-block;
+  margin-left: 10px;
+  border: solid white; /* La couleur de la flèche */
+  border-width: 0 3px 3px 0; /* Taille des bords pour créer une flèche diagonale */
+  padding: 5px; /* Taille de la flèche */
+  transform: rotate(45deg); /* Orientation de base : vers le bas */
+  transition: transform 0.3s ease; /* Animation de rotation fluide */
 }
 
-.equipments ul{
-  width: 90%;
-  background-color: #F6F6F6;
-  padding: 20px;
-  line-height: 1.4;
-  font-size: 20px;
+.arrow.up {
+  transform: rotate(-135deg); /* Orientation vers le haut */
+}
+
+.arrow.down {
+  transform: rotate(45deg); /* Orientation vers le bas */
+}
+
+.collapse-container{
+  width: 100%;
 }
 
   .details button {
@@ -438,19 +477,24 @@ span.Left {
 span.Top{
   font-size: 32px;
   height: 27px;
+  transition: transform 0.3s ease;
+}
+
+span.Top.open {
+  transform: rotate(180deg);
 }
 
 .banner-about img{
   width: 100%;
   border-radius: 10px;
-  height: 185px;
+  height: 200px;
 }
 
 .detail {
   display: flex;
   gap: 30px;
   padding: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   margin-top: 20px;
 }
@@ -515,7 +559,14 @@ span.Top{
 
 span.arrow.down {
   font-size: 32px;
-  height: 27px;
+}
+
+p.counter {
+  position: absolute;
+  bottom: 15px;
+  left: 38em;
+  color: white;
+  font-size: 18px;
 }
 
 footer {
@@ -525,6 +576,7 @@ footer {
   padding: 20px;
   margin-top: 20px;
 }
+
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
@@ -657,7 +709,7 @@ footer {
 
   body:not(.footerDiv) {
     height: 2000px;
-    padding: 0px 10px 10px ;
+    padding: 0px 20px 10px ;
 }
 
   .home {
@@ -674,7 +726,7 @@ footer {
   }
 
   .headerNav a img{
-    height: 50px;
+    height: 45px;
   }
 
   .banner img {
@@ -698,21 +750,16 @@ footer {
   }
   
   .banner h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
     font-size: 1.3em;
-    font-weight: bold;
-    z-index: 2;
-    margin: 0;
+    text-align: start;
+    width: 100%;
+    margin-left: 15px;
+
   }
 
   .gallery{
     flex-direction: column;
     display: flex;
-    gap: 1em;
     margin-top: 0px;
     padding: 2px;
     background-color: none;
@@ -732,10 +779,17 @@ footer {
     height: 196px;
   }
 
+  .lienA {
+    gap: 25px;
+    margin-top: 10px;
+  }
+
   .lienA a{
     color: black;
-    font-size: 17px;
+    font-size: 12px;
     padding-right: 0px;
+    line-height: 1.11px;
+    text-transform: uppercase;
   }
 
   #root main.logements div > img.active {
@@ -790,9 +844,7 @@ footer {
 
   nav.sc-dntaoT.hjaaia.headerNav {
     width: 100%;
-    padding: 0px 10px 10px 0px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0px 0px 25px 0px;
 }
   
   header nav a {
@@ -804,6 +856,8 @@ footer {
   main {
     padding: 10px;
     padding-top: 0em;
+    padding-left: 0px;
+    padding-right: 0px;
 }
   
   .imgLogements {
@@ -867,6 +921,8 @@ footer {
   .tags {
     display: flex;
     gap: 10px;
+    margin-bottom: 15px;
+    margin-top: 25px;
   }
   
   .tag {
@@ -874,8 +930,9 @@ footer {
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 11px;
-    width: 115px;
+    font-size: 8px;
+    width: 88px;
+    height: 18px;
   }
   
   .host-info {
@@ -975,7 +1032,7 @@ span.Top {
 .banner-about img {
   width: 100%;
   border-radius: 10px;
-  height: 126px;
+  height: 100px;
 }
 
 .fiabilité {
@@ -1001,7 +1058,32 @@ span.Top {
     padding: 20px;
     margin-top: 20px;
     font-size: 14px;
+    margin-left: -20px;
+    margin-right: -20px;
   }
+
+  .footerDiv {
+    background-color: black;
+    width: 100%;
+    height: 13em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 42px;
+    flex-direction: column;
+}
+
+.footerDiv p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 12px;
+  width: 27%;
+
+}
+
+.footerDiv img{
+  margin-bottom: 12px;
+}
 
   .error img {
     width: 263px;
@@ -1013,6 +1095,59 @@ span.Top {
     height: 51px;
     font-size: 22px;
     line-height: 1.4em;
+  }
+
+  .info{
+    margin-bottom: -15px;
+  }
+  
+  .host-info {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .host-rating {
+    display: flex;
+    gap: 5px; 
+  }
+  
+  .star-filled {
+    color: #FF6060; 
+    font-size: 24px; 
+  }
+  
+  .star-empty {
+    color: #E3E3E3; 
+    font-size: 24px; 
+  }
+  
+  .host {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+  }
+  
+  .host p {
+    margin: 0;
+    font-size: 15px; 
+    color: #FF6060; 
+    line-height: 1.2; 
+    margin-right: 25px;
+  }
+  
+  .host-picture {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid #FF6060; 
+  }
+
+  p.counter {
+    display: none;
   }
 
 }

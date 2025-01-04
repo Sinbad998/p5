@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
-/*import App from './App';*/
 import reportWebVitals from './autres/reportWebVitals';
 import {BrowserRouter as Router, Route , Routes} from 'react-router-dom'
 import Error from './components/Error/Error'
@@ -24,9 +23,9 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<Error />} />
         <Route path="/Fiche-logements/:id" element={<Fichelogements />} />
         <Route path="/A-Propos" element={<APropos />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </Router>
