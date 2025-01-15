@@ -53,7 +53,9 @@ const Fichelogements = () => {
             key={i}
             />
           ))}
-          <p className="counter">{index + 1}/{pictures.length}</p>
+          {pictures.length > 1 && (
+            <p className="counter">{index + 1}/{pictures.length}</p>
+          )}
       </div>
 
       <div className="info">
